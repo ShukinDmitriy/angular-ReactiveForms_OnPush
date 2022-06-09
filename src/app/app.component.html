@@ -2,3 +2,5 @@
 <p>Start editing to see some magic happen :)</p>
 
 <my-input [formElement]="$any(form.get('control'))"></my-input>
+
+{{ form.get('control')?.value }}
