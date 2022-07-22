@@ -5,7 +5,7 @@ import {
   VERSION,
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { timer } from 'rxjs';
+import { timer, merge, from } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   form = new FormGroup({
     control: new FormControl(),
   });
+
+  controlValue = this.form.get('control')?.valueChanges;
 
   ngOnInit() {
     timer(2000).subscribe((_) => {

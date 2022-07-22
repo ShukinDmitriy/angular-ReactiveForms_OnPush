@@ -3,4 +3,4 @@
 
 <my-input [formElement]="$any(form.get('control'))"></my-input>
 
-{{ form.get('control')?.value }}
+{{ controlValue | async }}
